@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Mobile prepare, viewport is the area of the user's screen, content tells us that the width of the page is the device's width and the content will be pritned with 1.0 scale  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ćwiczenie 3</title>
+</head>
+<body>
+  <div>
+      <p>Przejdź do ćwiczenia</p>
+          <ul>
+            <li><a href="index.html">Cwiczenie 1</a></li>
+            <li><a href="cwiczenie2.html">Cwiczenie 2</a></li>
+            <li><a href="cwiczenie3.html">Cwiczenie 3</a></li>
+            <li><a href="cwiczenie4.html">Cwiczenie 4</a></li>
+          </ul>    
+      <p>Przejdź do treści strony:</p>
+      <ul>
+        <li><a href="#table">Tabela</a></li>
+        <li><a href="#list">Lista zakupów</a></li>
+        <li><a href="#definitions">Definicje</a></li>
+      </ul>
+  </div>
+  <div>
+    <h1>Ćwiczenie 3: tabele i listy</h1>
+      <h2 id="table">Tabela</h2>      
+        <table cellspacing="4" cellpadding="4" border="2">
+          <thead>
+            <tr>
+              <th>Zamowienie</th>
+              <th>Klient</th>            
+              <th>Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Worek Ziemniakow</td>
+              <td>Andrzej A</td>
+              <td>22 zl, zwykla</td>
+            </tr>
+            <tr>
+              <td colspan="2" rowspan="2">Worek Marchwi</td>
+              <td>23 zl, zwykla</td>              
+            </tr>
+            <tr>
+              <td>20 zl, hurtowa</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Worek ziarna</td>
+                <td>Andrzej B</td>
+                <td>20 zl, zwykla</td>
+            </tr>
+            <tr>
+              <td>Andrzej C</td>
+              <td>15 zl, hurotwa</td>
+            </tr>
+            <tr>
+                <td colspan="2">Worek śmieci</td>
+                <td>0 zl, zwykla</td>
+            </tr>
+            <tr>
+                <td>Worek Żyta</td>
+                <td>Andrzej D</td>
+                <td>25 zl, zwykla</td>
+              </tr>          
+          </tbody>
+          <tfoot>
+              <tr>              
+                <td colspan="2">Suma wartości</td>
+                <td>125 zl</td>
+              </tr>
+          </tfoot>
+        </table>
+
+      <h2 id="list">Lista zakupów</h2>
+        <ol>
+          <li>Ogórek</li>
+          <li>Pomidor</li>
+          <li>Chipsy
+            <ul>
+              <li>Paprykowe</li>
+              <li>Solone</li>              
+            </ul>
+          <li>Napoje
+              <ol>
+                <li>Alkoholowe</li>
+                <li>Gazowane</li>
+                  <ol>
+                    <li>Pepsi</li>
+                    <li>Sprite</li>
+                  </ol>
+                <li>Niegazowane</li>              
+              </ol>          
+          </li>
+          <li>Masło</li>
+          <li>...</li>
+        </ol>  
+      <h2 id="definitions">Definicje:</h2>
+      <dl>
+        <dt><i>Żurek:</i></dt>
+          <dd>Zupa przyrządzana na bazie zakwasu chlebowego z mąki żytniej mająca charakterystyczny kwaśny smak. Specjalność regionalnej kuchni polskiej, białoruskiej (жур, кісяліца), czeskiej i słowackiej oraz innych Słowian północnych. Bywa zabielana mlekiem albo śmietaną (żur postny), przygotowana w połączeniu z wywarem z kości i jarzyn, z dodatkiem suszonych grzybów, albo też gotowana z kiełbasą, wędzonym boczkiem wieprzowym, żeberkami, ogonem wieprzowym; również na wywarze pozostałym po ugotowaniu szynki lub białej kiełbasy.</dd>
+        <dt><i>Barszcz Ukraiński:</i></dt>
+          <dd>Zupa zaprawiana, w której skład wchodzą buraki, kapusta świeża oraz ziemniaki pokrojone w słupki. Może zawierać kawałki gotowanego mięsa (wołowiny lub wieprzowiny). W Polsce do barszczu ukraińskiego dodaje się również fasolę lub grzyby; na Ukrainie barszcz z fasolą nazywają „barszczem czernihowskim” (ukr. борщ чернігівський, borszcz czernihiwśkyj).</dd>
+      </dl>
+  </div>  
+</body>
+</html>
