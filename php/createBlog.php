@@ -16,7 +16,7 @@
         <div> Nazwa bloga: <input type="text" name="blogName"></div>
         <div> Nazwa u¿ytkownika: <input type="text" name="userName"></div>
         <div> Has³o u¿ytkownika: <input type="password" name="userPassword"></div>
-        <div> Opis bloga: <textarea name="blogName" rows="20" cols="30"/></div>
+        <div> Opis bloga: <textarea name="blogName" rows="20" cols="30"></textarea></div>
 
         <div><input type="reset" value="Wyczyœæ pola" name="wyczysc"/></div>
         <div><input type="submit" value="Stwórz bloga!"></div>

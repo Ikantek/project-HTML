@@ -1,5 +1,5 @@
-   <a href="createBlog.php">Stwórz bloga</a>
-   <a href="createPost.php">Dodaj wpis</a>
-   <a href="createComment.php">Dodaj komentarz</a>
-   <a href="blogs.php">Przegl¹daj blogi</a>
+   <a href="createBlog.php">Create blog</a>
+   <a href="createPost.php">Create post</a>
+   <a href="createComment.php">Create comment</a>
+   <a href="blogs.php">Browse blogs</a>
    <br /><br />
