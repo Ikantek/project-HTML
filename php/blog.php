@@ -12,7 +12,7 @@
             include 'menu.php'; 		
 			$blogName = " ";
             echo $_GET['nazwa'];
-            if (isset($_GET['nazwa'])) {
+            if (isset($_GET['nazwa']) == 1) {
 			    $blogName = $_GET['nazwa'];
             }
             echo isset($_GET['nazwa']);
