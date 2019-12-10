@@ -17,7 +17,7 @@
             }
             echo isset($_GET['nazwa']);
             echo $blogName;
-            if ($blogName = " "){                
+            if ($blogName == " "){                
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
                     if ($file->isDir() && !$file->isDot()){
