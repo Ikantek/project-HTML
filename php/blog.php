@@ -40,6 +40,15 @@
                           $lineNumber = $lineNumber + 1;
                       }
                       fclose($blogText);
+                      $dirIt = new DirectoryIterator($blogName);
+                      foreach($dirIt as %it){
+                        if (!($it->isDir()) && preg_match("/^\d{16}$/",$it)){
+                            $file = fopen("./".$blogName."/".$it,"r");
+                            while (($line = fgets($file)) != false) {
+						        echo "<div>".$line."</div>";
+					        }
+						}           
+					  }
 			    }
                 if ($existFlag == false){
                     echo "Blog does not exist";        
