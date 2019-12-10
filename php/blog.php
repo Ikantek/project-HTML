@@ -14,7 +14,9 @@
             echo $_GET['nazwa'];
             if (isset($_GET['nazwa'])) {
 			    $blogName = $_GET['nazwa'];
-            }            
+            }
+            echo isset($_GET['nazwa']);
+            echo $blogName;
             if ($blogName = " "){                
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
