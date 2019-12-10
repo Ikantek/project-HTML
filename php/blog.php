@@ -11,12 +11,9 @@
         <?php 
             include 'menu.php'; 		
 			$blogName = " ";
-            echo $_GET['nazwa'];
             if (isset($_GET['nazwa']) == 1) {
 			    $blogName = $_GET['nazwa'];
             }
-            echo isset($_GET['nazwa']);
-            echo $blogName;
             if ($blogName == " "){                
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
@@ -26,13 +23,12 @@
 					}
 				}
 			} else {
-                echo "asd3".$blogName;
                 $existFlag = false;
                 $directoryPath = "./".$blogName."/";
                 $lineNumber = 1;
                 if(file_exists($directoryPath)){
                       $existFlag = true;
-                      $blogText = fopen($blogName."/info", 'r');
+                      $blogText = fopen($blogName."/info.txt", 'r');
                       echo "<div><h1>Title: ".$blogName."</h1></div>";
                       while(($line = fgets($blogText))!=false){
                           if ($lineNumber == 1){
