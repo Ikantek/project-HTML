@@ -19,8 +19,8 @@
     include 'menu.php';
 
     if (!file_exists($blogName)) {
-      mkdir($nazwaBloga, 0755);
-      $filePath = $nazwaBloga . "/info.txt";
+      mkdir($blogName, 0755);
+      $filePath = $blogName . "/info.txt";
       $file = fopen($filePath, 'w');
       fwrite($filePath,$userName,md5($password),$blogDescription);
       fclose($file);
