@@ -15,8 +15,9 @@
             if (isset($_GET['nazwa'])) {
 			    $blogName = $_GET['nazwa'];
             }
-            echo "asd".$blogName;
+            echo "asd1".$blogName;
             if ($blogName = ""){
+                echo "asd2".$blogName;
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
                     if ($file->isDir() && !$file->isDot()){
@@ -25,6 +26,7 @@
 					}
 				}
 			} else {
+                echo "asd3".$blogName;
                 $existFlag = false;
                 $directoryPath = "./".$blogName."/";
                 $lineNumber = 1;
