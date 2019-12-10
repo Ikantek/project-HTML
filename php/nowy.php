@@ -16,8 +16,6 @@
     $password = md5($_POST['userPassword'])."\n";
     $Description = $_POST['blogDescription']."\n";
 
-    include 'menu.php';
-
     if (!file_exists($blogName)) {
       mkdir($blogName, 0755);
       $filePath = $blogName."/info.txt";
