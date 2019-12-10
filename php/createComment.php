@@ -18,7 +18,7 @@
 				
 	        $directory = new RecursiveDirectoryIterator('.');
 	        foreach (new RecursiveIteratorIterator($directory) as $filePath => $file) {
-	            if (! ($file->isDir())) {
+	            if (!($file->isDir())) {
 	                if (preg_match("/\d{16}$/", $file)) {
 	                    echo "<option>".$file."</option>";
 					}
