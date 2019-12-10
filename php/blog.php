@@ -10,7 +10,8 @@
     <body>
         <?php 
             include 'menu.php'; 		
-			$blogName = " ";            
+			$blogName = " ";
+            echo $_GET['nazwa'];
             if (isset($_GET['nazwa'])) {
 			    $blogName = $_GET['nazwa'];
             }            
