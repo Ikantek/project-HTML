@@ -10,14 +10,11 @@
     <body>
     <?php include 'menu.php'; ?>
 		<?php			
-			$blogName = " ";
-            echo $blogName;
+			$blogName = " ";            
             if (isset($_GET['nazwa'])) {
 			    $blogName = $_GET['nazwa'];
-            }
-            echo "asd1".$blogName;
-            if ($blogName = " "){
-                echo "asd2".$blogName;
+            }            
+            if ($blogName = " "){                
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
                     if ($file->isDir() && !$file->isDot()){
