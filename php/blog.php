@@ -8,8 +8,8 @@
         <title>Adding post php!</title>
     </head>
     <body>
-    <?php include 'menu.php'; ?>
-		<?php			
+    <?php 
+            include 'menu.php'; 		
 			$blogName = " ";            
             if (isset($_GET['nazwa'])) {
 			    $blogName = $_GET['nazwa'];
