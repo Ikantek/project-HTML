@@ -14,15 +14,15 @@
     $blogName = $_POST['blogName'];
     $userName = $_POST['userName']."\n";
     $password = $_POST['userPassword']."\n";
-    $blogDescription = $_POST['blogDescription']."\n";
+    $Description = $_POST['blogDescription']."\n";
 
     include 'menu.php';
 
     if (!file_exists($blogName)) {
       mkdir($blogName, 0755);
-      $filePath = $blogName."/info";
+      $filePath = $blogName."/info.txt";
       $file = fopen($filePath, 'w');
-      fwrite($file,$userName.$password.$blogDescription);
+      fwrite($file,$userName.$password.$Description);
       fclose($file);
       echo "Blog has been created succesfully";
    } else {
