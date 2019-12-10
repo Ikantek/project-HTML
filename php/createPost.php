@@ -16,8 +16,8 @@
         <div> User Name: <input type="text" name="userName"></div>
         <div> User Password: <input type="password" name="userPassword"></div>
         <div> Post Description: <textarea name="postDescription" rows="20" cols="30"></textarea></div>
-        <div><input type="text" name = "date" value="<?php echo date("Y-m-d"); ?>"></div>
-        <div><input type="text" name = "time" value="<?php date_default_timezone_set("America"); echo date("H:i"); ?>"> </div>
+        <div>Date: </div><input type="text" name = "date" value="<?php echo date("Y-m-d"); ?>">
+        <div>Hour: <input type="text" name = "time" value="<?php date_default_timezone_set("America"); echo date("H:i"); ?>"> </div>
         <div>Attachment 1<input type="file" name="file1"></div>
 		<div>Attachment 2<input type="file" name="file2"></div>
 		<div>Attachment 3<input type="file" name="file3"></div>

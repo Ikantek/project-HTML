@@ -11,29 +11,20 @@
     <?php include 'menu.php'; ?>
 
     <?php
-    $nazwaBloga = $_POST['nazwaBloga'];
-    $nazwaUzytkownika = $_POST['nazwaUzytkownika'];
-    $haslo = $_POST['haslo'];
-    $opis = $_POST['opisBloga'];
+    $blogName = $_POST['blogName'];
+    $userName = $_POST['userName'];
+    $password = $_POST['userPassword'];
+    $blogDescription = $_POST['blogDescription'];
 
     include 'menu.php';
 
-    if (!file_exists($nazwaBloga)) {
-      mkdir($nazwaBloga, 0755, true);
-
-      $sciezka_pliku_txt = $nazwaBloga . "/info.txt";
-      $plik = fopen($sciezka_pliku_txt, 'w');
-
-      if (flock($plik, LOCK_EX)) {
-         fputs($plik, $nazwaUzytkownika . "\n");
-         fputs($plik, md5($haslo) . "\n");
-         fputs($plik, $opis);
-         echo "Blog utworzony <br />";
-      }
-
-      flock($plik, LOCK_UN);
-      fclose($plik);
-
+    if (!file_exists($blogName)) {
+      mkdir($nazwaBloga, 0755);
+      $filePath = $nazwaBloga . "/info.txt";
+      $file = fopen($filePath, 'w');
+      fwrite($filePath,$userName,md5($password),$blogDescription);
+      fclose($file);
+      echo "Blog has been created succesfully";
    } else {
       echo "Blog with this name arleady exist";
    }
