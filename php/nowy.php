@@ -22,7 +22,7 @@
       mkdir($blogName, 0755);
       $filePath = $blogName . "/info.txt";
       $file = fopen($filePath, 'w');
-      fwrite($filePath,$userName,md5($password),$blogDescription);
+      fwrite($filePath,$userName,$password,$blogDescription);
       fclose($file);
       echo "Blog has been created succesfully";
    } else {
