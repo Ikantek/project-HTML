@@ -12,9 +12,9 @@
 
     <?php
     $blogName = $_POST['blogName'];
-    $userName = $_POST['userName'];
-    $password = $_POST['userPassword'];
-    $blogDescription = $_POST['blogDescription'];
+    $userName = $_POST['userName']."\n";
+    $password = $_POST['userPassword']."\n";
+    $blogDescription = $_POST['blogDescription']."\n";
 
     include 'menu.php';
 
