@@ -32,7 +32,7 @@
                       echo "<div><h1>Title: ".$blogName."</h1></div>";
                       while(($line = fgets($blogText))!=false){
                           if ($lineNumber == 1){
-                             echo "<div><h2>Blog is being written by: ".$line."</h2>M/div>";
+                             echo "<div><h2>Blog is being written by: ".$line."</h2></div>";
 					      }
                           if ($lineNumber == 3){
                             echo "<div><h3>Short description: ".$line."</h3></div>";
