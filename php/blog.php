@@ -41,7 +41,7 @@
                       }
                       fclose($blogText);
 			    }
-                if ($existFlag = false){
+                if ($existFlag == false){
                     echo "Blog does not exist";        
 				}
 			}
