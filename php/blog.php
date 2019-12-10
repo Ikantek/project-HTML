@@ -17,7 +17,7 @@
             if ($blogName = ""){
                 $directory = new DirectoryIterator(".");
                 foreach($directory as $file){
-                    if ($file->isDir() && !$plikInfo->isDot()){
+                    if ($file->isDir() && !$file->isDot()){
                         $blog = $file->getFilename();
                         echo sprintf("<div><a href=\"blog.php?nazwa=%s\">%s</a></div>", $blog, $blog);
 					}
