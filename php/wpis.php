@@ -15,7 +15,7 @@
 			$postDescription = $_POST['postDescription'];
 			$date = $_POST['date'];
 			$time = $_POST['time'];
-
+			$userFlag = False;
 			$blogPath = NULL;
 
 			$directory = new RecursiveDirectoryIterator('.');
@@ -29,11 +29,12 @@
 					$filePassword = rtrim($filePassword,"\n");			
 					if ($userName == $fileUser && md5($password) == $filePassword) {
 						$blogPath = $file->getPath();
+						$userFlag = True;
 						break;
 					}
 				}
 			}
-			if (blogPath == NULL){
+			if (!$userFlag){
 				echo "Wrong username or password.";
 			}
 			else{				
