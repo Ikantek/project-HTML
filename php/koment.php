@@ -24,4 +24,5 @@
 	$file = fopen($pathToAdd,"w");
 	fwrite($file,$userName."\n".$comment."\n".$commentRate."\n".$date."(".$time.")"."\n");
 	fclose($file);
+	echo "Comment created";
 ?>
