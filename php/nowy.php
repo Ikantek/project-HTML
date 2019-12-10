@@ -20,7 +20,7 @@
 
     if (!file_exists($blogName)) {
       mkdir($blogName, 0755);
-      $filePath = $blogName . "/info.txt";
+      $filePath = $blogName . "/info";
       $file = fopen($filePath, 'w');
       fwrite($filePath,$userName,$password,$blogDescription);
       fclose($file);
