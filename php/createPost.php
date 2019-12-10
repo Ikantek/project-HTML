@@ -22,7 +22,7 @@
 		<div>Attachment 2<input type="file" name="file2"></div>
 		<div>Attachment 3<input type="file" name="file3"></div>
         <div><input type="reset" value="Clear" /></div>
-        <div><input type="submit" value="Create Blog!"></div>
+        <div><input type="submit" value="Create Post!"></div>
     </form>
     </body>
 </html>

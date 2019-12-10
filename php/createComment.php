@@ -34,7 +34,7 @@
             <option>Neutral</option>
         </select>
         <div><input type="reset" value="Clear" /></div>
-        <div><input type="submit" value="Create Blog!"></div>
+        <div><input type="submit" value="Create Comment!"></div>
     </form>
     </body>
 </html>
