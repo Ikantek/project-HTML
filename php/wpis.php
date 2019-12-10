@@ -16,7 +16,6 @@
 			$date = $_POST['date'];
 			$time = $_POST['time'];
 
-			$blog = "";
 			$blogPath = NULL;
 
 			$directory = new RecursiveDirectoryIterator('.');
@@ -24,12 +23,12 @@
 			foreach(new RecursiveIteratorIterator($directory) as $path => $file) {
 				if ($file->getFileName() == 'info.txt' && !($file->isDir())) {				
 					$fileArray = file($path);
-					$fileUser = trim($fileArray[0],"\n");
-					$filePassword = trim($fileArray[1],"\n");			
+					$fileUser = $fileArray[0];
+					$fileUser = rtrim($fileUser,"\n");
+					$filePassword = $fileArray[1];
+					$filePassword = rtrim($filePassword,"\n");			
 					if ($userName == $fileUser && md5($password) == $filePassword) {
 						$blogPath = $file->getPath();
-						$blog = dirname($path);
-						$blog = trim($blog,"./");
 						break;
 					}
 				}
@@ -53,6 +52,7 @@
 				$fileAdd=fopen($filePath, 'w');
 				fwrite($fileAdd,$postDescription."\n");
 				fclose($myFile);
+				echo "Post created.";
 			}
 		?> 
     </body>
