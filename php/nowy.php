@@ -20,9 +20,9 @@
 
     if (!file_exists($blogName)) {
       mkdir($blogName, 0755);
-      $filePath = $blogName . "/info";
+      $filePath = $blogName."/info";
       $file = fopen($filePath, 'w');
-      fwrite($file,$userName,$password,$blogDescription);
+      fwrite($file,$userName.$password.$blogDescription);
       fclose($file);
       echo "Blog has been created succesfully";
    } else {
