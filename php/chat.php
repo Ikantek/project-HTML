@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <link rel="stylesheet" type="text/css" title="Main" href="styles.css">
     <title>Chat</title>
 </head>
 <body>
@@ -22,15 +21,15 @@
     </div>
     <form class="formofChat">
       <div class="formGroup">
-        <label for="username">Nick:</label>
+        <label for="username">Username:</label>
         <input id="username" name="username" type="text" disabled>
       </div>
       <div class="formGroup">
-        <label for="message">Wiadomoœæ:</label>
+        <label for="message">Message:</label>
         <textarea id="message" name="message" class="chatMessage" disabled></textarea>
       </div>
       <div class="formGroup">
-        <button role="submit" class="buttontoSend" disabled>Wyœlij</button>
+        <button role="submit" class="buttontoSend" disabled>Send</button>
       </div>
     </form>
   </div>
