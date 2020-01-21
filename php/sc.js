@@ -7,7 +7,7 @@ function onload() {
 }
 
 function actualizeDate() {
-    var field = document.getElementById('date');
+    var field = document.getElementById('date');    
     var actualDate = new Date();
     var day = actualDate.getDate();
     if (day < 10) {
@@ -24,8 +24,11 @@ function actualizeDate() {
 
 function validateDate() {
     var field = document.getElementById('date').value;
+    var dateSplit = field.split('-');
+    var now = new Date();
+    var parsed = new Date(dateSplit[0], parseInt(dateSplit[1]) - 1, parseInt(dateSplit[2]));
     var dateValidationRegex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/gi;
-    if (!dateValidationRegex.test(field)) {
+    if (!dateValidationRegex.test(field) || parsed>now) {
         actualizeDate();
     }
 }
