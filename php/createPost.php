@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add Post</title>
     </head>
-    <body>
+    <body onload="onload()">
     <?php include 'menu.php'; ?>
 
     <form action="wpis.php" method="Post" enctype="multipart/form-data">
@@ -16,8 +16,8 @@
         <div> User Name: <input type="text" name="userName"></div>
         <div> User Password: <input type="password" name="userPassword"></div>
         <div> Post Description: <textarea name="postDescription" rows="20" cols="30"></textarea></div>
-        <div>Date: </div><input type="text" name = "date" value="">
-        <div>Hour: <input type="text" name = "time" value=""> </div>
+        <div>Date: <input type="text" id="date" name = "date" value=""> </div>
+        <div>Hour: <input type="text" id="time" name = "time" value=""> </div>
         <div>Attachment 1<input type="file" name="file1"></div>
 		<div>Attachment 2<input type="file" name="file2"></div>
 		<div>Attachment 3<input type="file" name="file3"></div>
@@ -25,4 +25,6 @@
         <div><input type="submit" value="Create Post!"></div>
     </form>
     </body>
+    <script type="text/javascript" src="sc.js">
+	</script>
 </html>
