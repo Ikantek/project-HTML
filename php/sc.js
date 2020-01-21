@@ -47,12 +47,12 @@ function validateHour() {
 function listOfAttachments() {
     var attachments = document.getElementById('attachments');
     var numberOfLines = attachments.children.length; //ilosc linii w divie
-    var fileNo = numberOfLines / 2; //ilosc inputów na pliki (- znaczniki br)
+    var fileNo = numberOfLines / 2; 
 
     var input = document.createElement('input');
     input.type = "file";
     input.name = "file" + fileNo;
-    input.onchange = function () { listOfAttachments(); }; //wywo³anie rekurencyjne
+    input.onchange = function () { listOfAttachments(); }; 
 
     attachments.appendChild(input);
     attachments.appendChild(document.createElement("br"));
