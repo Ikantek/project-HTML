@@ -1,11 +1,3 @@
-var ilosc_pol_zalacznikow = 1;
-const MAX_ZALACZNIKOW = 10;
-
-function onload() {
-    actualizeDate();
-    actualizeHour();
-}
-
 function actualizeDate() {
     var field = document.getElementById('date');    
     var actualDate = new Date();
@@ -52,21 +44,19 @@ function validateHour() {
     }
 }
 
-function stworzNowyPrzyciskZalacznika() {
-    if (ilosc_pol_zalacznikow < MAX_ZALACZNIKOW) {
-        ilosc_pol_zalacznikow++;
+function listOfAttachments() {
+    var attachments = document.getElementById('attachments');
+    var numberOfLines = attachments.children.length; //ilosc linii w divie
+    var fileNo = numberOfLines / 2; //ilosc inputów na pliki (- znaczniki br)
 
-        var nowyPrzycisk = document.createElement('input');
-        nowyPrzycisk.setAttribute("type", "file");
-        nowyPrzycisk.setAttribute("name", "zalacznik" + ilosc_pol_zalacznikow);
-        nowyPrzycisk.setAttribute("onclick", "stworzNowyPrzyciskZalacznika()");
+    var input = document.createElement('input');
+    input.type = "file";
+    input.name = "file" + fileNo;
+    input.onchange = function () { listOfAttachments(); }; //wywo³anie rekurencyjne
 
-        var nowa_linia = document.createElement('br');
+    attachments.appendChild(input);
+    attachments.appendChild(document.createElement("br"));
 
-        var pole_zalacznikow = document.getElementById("dodawanie_zalacznikow");
-        pole_zalacznikow.appendChild(nowyPrzycisk);
-        pole_zalacznikow.appendChild(nowa_linia);
-    }
 }
 
 function stworzStyle() {
