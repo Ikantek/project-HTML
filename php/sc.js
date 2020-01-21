@@ -31,7 +31,7 @@ function validateDate() {
 }
 
 function actualizeHour() {
-    var field = document.getElementById('hour');
+    var field = document.getElementById('time');
     var actualDate = new Date();
     var hour = actualDate.getHours();
     var minutes = actualDate.getMinutes();
@@ -42,7 +42,7 @@ function actualizeHour() {
 }
 
 function validateHour() {
-    var field = document.getElementById('hour').value;
+    var field = document.getElementById('time').value;
     var regexp_godziny = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/gi;
     if (!regexp_godziny.test(field)) {
         actualizeHour();
