@@ -1,66 +1,55 @@
-function stworzStyle() {
-    var style = document.getElementsByTagName("link");
-    var iloscStyli = style.length;
-    console.log(iloscStyli);
+var styles = document.querySelectorAll('link');
+var stylesList = document.querySelector('.js-styles-list');
 
-    var spisTresci = document.getElementById("styles");
+/**
+ * 5. U¿ywaj¹c DOM wygeneruj listê dostêpnych stylów alternatywnych na ka¿dej stronie swojego portalu z
+ * poprzednich æwiczeñ. Lista mo¿e byæ zbudowana np. z elementów li, albo a albo list rozwijanych formularza.
+ */
+for (var i = 0; i < styles.length; i++) {
+    var style = styles[i];
+    var element = document.createElement('li');
 
-    for (i = 0; i < iloscStyli; i++) {
-        var aktualnyElement = document.createElement('a');
-        var nazwaStylu = style[i].title;
-
-        aktualnyElement.innerHTML = nazwaStylu;
-        aktualnyElement.setAttribute("onclick", "wybierzStyl(\"" + nazwaStylu + "\")");
-
-        console.log("AA");
-        spisTresci.appendChild(aktualnyElement);
-        spisTresci.appendChild(document.createElement('br'));
-    }
+    element.innerHTML = style.getAttribute('title');
+    /**
+     * 6. Korzystaj¹c z onClick na elementach listy i DOM
+     * zaprogramuj stronê tak aby przegl¹darka prze³¹cza³a aktywny styl.
+     */
+    element.setAttribute('onclick', 'setStyleActive(' + i + ')');
+    stylesList.appendChild(element);
 }
 
-function wybierzStyl(nazwaStylu) {
-    var listaStyli = document.getElementsByTagName("link");
-    var iloscStyli = listaStyli.length;
-    for (var i = 0; i < iloscStyli; i++) {
-        var styl = listaStyli[i];
-        if (styl.getAttribute("title") == nazwaStylu) {
-            styl.disabled = false;
-            console.log(styl.getAttribute("title") + " enabled");
-        } else {
-            styl.disabled = true;
-            console.log(styl.getAttribute("title") + " disabled");
-        }
+function setStyleActive(index) {
+    console.log('set active: ', index, styles);
+
+    // Najpierw trzeba wy³¹czyæ wszystkie, bo inaczej przy
+    // odœwie¿eniu strony i próbie ustawienia stylu z cookies coœ siê
+    // buguje i nie dzia³a i smuteczek ogólnie
+    for (var i = 0; i < styles.length; i++) {
+        styles[i].disabled = true;
     }
 
-    ustawCiasteczko("style", nazwaStylu, 365);
+    styles[index].disabled = false;
+
+    /**
+     * Ustaw cookie
+     */
+    document.cookie = 'style=' + index + ';';
 }
 
-function sprawdzCiasteczko() {
-    var ciasteczko = wczytajCiasteczko("style");
-    wybierzStyl(ciasteczko);
-}
+/**
+ * 7. Za pomoc¹ Cookies zaprogramuj aby wybrany styl by³ domyœlny
+ * przy ponownym odwiedzaniu strony, albo przejœciu do innej strony Twojego portalu.
+ */
+window.addEventListener('load', function () {
+    if (document.cookie) {
+        var cookies = document.cookie.split(/; */);
 
-function ustawCiasteczko(nazwa, styl, dni) {
-    var data = new Date();
-    data.setTime(data.getTime() + (dni * 24 * 60 * 60 * 1000));
-    var wygasa = "expires=" + data.toUTCString();
-    document.cookie = nazwa + "=" + styl + ";" + wygasa + "; path=/";
-}
+        for (var i = 0; i < cookies.length; i++) {
+            var data = cookies[i].split('=');
 
-function wczytajCiasteczko(nazwa) {
-    var styl = "";
-    var nazwa = nazwa + "=";
-    var ciasteczko = decodeURIComponent(document.cookie);
-    var ciasteczko_tablica = ciasteczko.split(';');
-    for (var i = 0; i < ciasteczko_tablica.length; i++) {
-        var fragment = ciasteczko_tablica[i];
-        while (fragment.charAt(0) == ' ') {
-            fragment = fragment.substring(1);
-        }
-        if (fragment.indexOf(nazwa) == 0) {
-            styl = fragment.substring(nazwa.length, fragment.length);
-            break;
+            if (data[0] == 'style') {
+                setStyleActive(parseInt(data[1]));
+            }
         }
     }
-    return styl;
-}
+});
